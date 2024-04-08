@@ -25,6 +25,8 @@ import * as health from './health';
 import * as netDiskManage from './netDiskManage';
 import * as netDiskOverview from './netDiskOverview';
 import * as businessTodo from './businessTodo';
+import * as article from './article';
+
 export default {
   auth,
   account,
@@ -49,4 +51,5 @@ export default {
   netDiskManage,
   netDiskOverview,
   businessTodo,
+  article,
 };

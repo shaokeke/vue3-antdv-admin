@@ -78,6 +78,10 @@ const permissions = [
   'tool:storage:list',
   'tool:storage:delete',
   'upload:upload',
+  'article:manage:list',
+  'article:manage:create',
+  'article:manage:update',
+  'article:manage:delete',
 ] as const;
 
 export type PermissionType = (typeof permissions)[number];

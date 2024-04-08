@@ -1272,4 +1272,49 @@ declare namespace API {
   type UserUpdateParams = {
     id: number;
   };
+
+  type ArticleDeleteParams = {
+    id: number;
+  };
+  type ArticleDto = {
+    /** 标题 */
+    title: string;
+    /** 内容 */
+    content: string;
+    /** 路径 */
+    path?: string;
+    /** 访问量 */
+    visitCount: number;
+  };
+  type ArticleEntity = {
+    /** 标题 */
+    title: string;
+    /** 内容 */
+    content: string;
+    /** 路径 */
+    path: string;
+    /** 访问量 */
+    visitCount: number;
+    id: number;
+    createdAt: string;
+    updatedAt: string;
+  };
+
+  type ArticleInfoParams = {
+    id: number;
+  };
+
+  type ArticleListParams = {
+    page?: number;
+    pageSize?: number;
+    field?: string;
+    order?: 'ASC' | 'DESC';
+    /** 参数名称 */
+    title: string;
+    _t?: number;
+  };
+
+  type ArticleUpdateParams = {
+    id: number;
+  };
 }
