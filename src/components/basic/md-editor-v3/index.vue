@@ -14,7 +14,8 @@
     // text: '',
     theme: 'cyanosis',
   });
-  const onUploadImg = async (files, callback) => {
+
+  const onUploadImg = async (files: File[], callback: (urls: string[]) => void) => {
     const res = await Promise.all(
       files.map((file) => {
         return new Promise((rev, rej) => {
@@ -33,6 +34,6 @@
       }),
     );
 
-    callback(res.map((item) => item.data.url));
+    callback(res.map((item: any) => item.data.url));
   };
 </script>
