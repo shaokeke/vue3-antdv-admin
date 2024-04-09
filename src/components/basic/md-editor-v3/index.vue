@@ -4,10 +4,9 @@
 
 <script setup lang="ts">
   import { reactive } from 'vue';
-  import axios from 'axios';
   import { MdEditor } from 'md-editor-v3';
   import 'md-editor-v3/lib/style.css';
-
+  import Api from '@/api';
   const content = defineModel<string>('value');
   // const content = ref('# Hello Editor');
   const state = reactive({
@@ -19,21 +18,14 @@
     const res = await Promise.all(
       files.map((file) => {
         return new Promise((rev, rej) => {
-          const form = new FormData();
-          form.append('file', file);
-
-          axios
-            .post('/api/img/upload', form, {
-              headers: {
-                'Content-Type': 'multipart/form-data',
-              },
-            })
+          Api.toolsUpload
+            .uploadUpload({ file })
             .then((res) => rev(res))
             .catch((error) => rej(error));
         });
       }),
     );
 
-    callback(res.map((item: any) => item.data.url));
+    callback(res.map((item: any) => item.filename));
   };
 </script>
