@@ -9,6 +9,7 @@ import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 import Unocss from 'unocss/vite';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 import dayjs from 'dayjs';
+// import Http2Proxy from '@admin-pkg/vite-plugin-http2-proxy';
 import mockServerPlugin from '@admin-pkg/vite-plugin-msw/vite';
 import TinymceResourcePlugin from '@admin-pkg/vite-plugin-tinymce-resource';
 import pkg from './package.json';
