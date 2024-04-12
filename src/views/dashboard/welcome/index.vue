@@ -32,7 +32,7 @@
 
   // import performanceMonitor from '@/utils/performanceMonitor'
 
-  const loginIp = useUserStore().userInfo?.phone;
+  const loginIp = useUserStore().userInfo?.ip || '127.0.0.1';
   // 是否联网
   const { online } = useOnline();
   // 获取电池信息

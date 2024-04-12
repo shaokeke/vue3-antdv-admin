@@ -82,6 +82,7 @@ const permissions = [
   'article:manage:create',
   'article:manage:update',
   'article:manage:delete',
+  'article:manage:generate',
 ] as const;
 
 export type PermissionType = (typeof permissions)[number];

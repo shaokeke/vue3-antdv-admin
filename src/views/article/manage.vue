@@ -2,7 +2,7 @@
   <div>
     <DynamicTable
       row-key="id"
-      header-title="参数配置"
+      header-title="文章管理"
       :data-request="Api.article.articleList"
       :columns="columns"
       bordered
@@ -14,7 +14,11 @@
           :disabled="!$auth('article:manage:create')"
           @click="openMenuModal({ title, content: getDefaultContent() })"
         >
-          新增
+          <Icon icon="ant-design:plus-outlined" /> 新增
+        </a-button>
+
+        <a-button type="success" :disabled="!$auth('article:manage:generate')" @click="generate">
+          <Icon icon="ant-design:interaction-twotone" /> 生成
         </a-button>
       </template>
     </DynamicTable>
@@ -94,7 +98,9 @@ date: ${formatToDateTime(new Date())}
     await Api.article.articleDelete({ id: record.id });
     dynamicTableInstance?.reload();
   };
-
+  const generate = () => {
+    console.log('generate');
+  };
   const columns: TableColumnItem[] = [
     ...baseColumns,
     {
