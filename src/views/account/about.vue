@@ -3,7 +3,7 @@
     <Card>
       <Card.Meta title="关于">
         <template #description>
-          <BlankLink :url="pkg.author.url" :text="pkg.name" />{{ description }}
+          {{ description }}
         </template>
       </Card.Meta>
     </Card>
@@ -14,12 +14,6 @@
         </Descriptions.Item>
         <Descriptions.Item label="最后编译时间">
           <Tag color="processing">{{ lastBuildTime }}</Tag>
-        </Descriptions.Item>
-        <Descriptions.Item label="GitHub">
-          <BlankLink :url="pkg.repository.url" text="GitHub" />
-        </Descriptions.Item>
-        <Descriptions.Item label="预览地址">
-          <BlankLink :url="pkg.homepage" text="预览地址" />
         </Descriptions.Item>
       </Descriptions>
     </Card>
@@ -70,11 +64,10 @@
   };
 
   const description = `
-    的前端项目是基于 Vue${getMajorVersion('vue')}.x、
+    前端项目是基于 Vue${getMajorVersion('vue')}.x、
     Vite${getMajorVersion('vite')}.x、
     Ant-Design-Vue${getMajorVersion('ant-design-vue')}.x 、
     TypeScript${getMajorVersion('typescript')}.x 开发，
     内置了动态路由、权限验证、并提供了常用的功能组件，帮助你快速搭建企业级中后台产品原型。
-    原则上不会限制任何代码用于商用。
   `;
 </script>

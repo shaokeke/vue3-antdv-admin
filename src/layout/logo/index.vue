@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
-    <img src="~@/assets/images/logo.png" alt="" />
-    <h2 v-show="!collapsed" class="title">One Piece</h2>
+    <img src="~@/assets/images/user.png" alt="" />
+    <h2 v-show="!collapsed" class="title">Blog Admin</h2>
   </div>
 </template>
 
@@ -22,7 +22,7 @@
     line-height: 64px;
 
     img {
-      height: 32px;
+      height: 36px;
       margin-right: 8px;
     }
 

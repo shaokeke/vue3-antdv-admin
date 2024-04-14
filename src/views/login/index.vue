@@ -2,8 +2,8 @@
   <div class="login-box">
     <div class="login-logo">
       <!-- <svg-icon name="logo" :size="45" /> -->
-      <img src="~@/assets/images/logo.png" width="45" />
-      <h1 class="mb-0 ml-2 text-3xl font-bold">Antdv Admin</h1>
+      <img src="~@/assets/images/user.png" width="50" />
+      <h1 class="mb-0 ml-2 text-3xl font-bold">Hexo BLog Admin</h1>
     </div>
     <a-form layout="horizontal" :model="loginFormModel" @submit.prevent="handleSubmit">
       <a-form-item>
