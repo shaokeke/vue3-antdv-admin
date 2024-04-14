@@ -98,8 +98,8 @@ date: ${formatToDateTime(new Date())}
     await Api.article.articleDelete({ id: record.id });
     dynamicTableInstance?.reload();
   };
-  const generate = () => {
-    console.log('generate');
+  const generate = async () => {
+    await Api.article.articleGenerate();
   };
   const columns: TableColumnItem[] = [
     ...baseColumns,

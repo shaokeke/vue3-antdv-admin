@@ -89,3 +89,10 @@ export async function articleDelete(
     ...(options || { successMsg: '删除成功' }),
   });
 }
+
+export async function articleGenerate(options?: RequestOptions) {
+  return request(`api/article/generate`, {
+    method: 'GET',
+    ...(options || { successMsg: '生成成功' }),
+  });
+}
