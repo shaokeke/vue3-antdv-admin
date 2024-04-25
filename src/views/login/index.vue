@@ -73,6 +73,9 @@
   const updateCaptcha = async () => {
     const data = await Api.captcha.captchaCaptchaByImg({ width: 100, height: 50 });
     captcha.value = data.img;
+    // const data = await Api.captcha.captcha();
+    // console.log('updateCaptcha', data);
+    // captcha.value = data.picPath;
     loginFormModel.value.captchaId = data.id;
   };
   updateCaptcha();

@@ -16,3 +16,15 @@ export async function captchaCaptchaByImg(
     ...(options || {}),
   });
 }
+
+export async function captcha(options?: RequestOptions) {
+  return request<{
+    status?: string;
+    info?: Record<string, any>;
+    error?: Record<string, any>;
+    details?: Record<string, any>;
+  }>('/backend/auth/captcha', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
