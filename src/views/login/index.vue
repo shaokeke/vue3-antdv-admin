@@ -24,9 +24,9 @@
       </a-form-item>
       <a-form-item>
         <a-input
-          v-model:value="loginFormModel.verifyCode"
+          v-model:value="loginFormModel.captcha"
           placeholder="验证码"
-          :maxlength="4"
+          :maxlength="6"
           size="large"
         >
           <template #prefix> <Icon icon="ant-design:safety-outlined" /> </template>
@@ -66,26 +66,26 @@
   const loginFormModel = ref({
     username: 'admin',
     password: 'a123456',
-    verifyCode: '',
+    captcha: '',
     captchaId: '',
   });
 
   const updateCaptcha = async () => {
-    const data = await Api.captcha.captchaCaptchaByImg({ width: 100, height: 50 });
-    captcha.value = data.img;
-    // const data = await Api.captcha.captcha();
-    // console.log('updateCaptcha', data);
-    // captcha.value = data.picPath;
-    loginFormModel.value.captchaId = data.id;
+    // const data = await Api.captcha.captchaCaptchaByImg({ width: 100, height: 50 });
+    // captcha.value = data.img;
+    const data = await Api.captcha.captcha();
+    console.log('updateCaptcha', data);
+    captcha.value = data.picPath;
+    loginFormModel.value.captchaId = data.captchaId;
   };
   updateCaptcha();
 
   const handleSubmit = async () => {
-    const { username, password, verifyCode } = loginFormModel.value;
+    const { username, password, captcha } = loginFormModel.value;
     if (username.trim() == '' || password.trim() == '') {
       return message.warning('用户名或密码不能为空！');
     }
-    if (!verifyCode) {
+    if (!captcha) {
       return message.warning('请输入验证码！');
     }
     message.loading('登录中...', 0);
